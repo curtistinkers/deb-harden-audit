@@ -13,9 +13,7 @@ Depends:
  auditd,
  ${misc:Depends}
 Enhances:
- auditd,
- deb-harden-fim,
- deb-harden-ssh
+ auditd
 Suggests:
  deb-harden-fim,
  deb-harden-ssh,

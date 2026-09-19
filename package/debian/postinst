@@ -6,12 +6,33 @@ SCRIPT_NAME="postinst"
 
 # --- Helper Functions ---
 
-
+reload_audit_rules() {
+    if command -v augenrules >/dev/null 2>&1; then
+        echo "[*] Validating auditd rules..."
+        if augenrules --check; then
+            if command -v systemctl >/dev/null 2>&1 && systemctl is-active --quiet auditd; then
+                echo "[*] Compiling and loading auditd rules into the kernel."
+                augenrules --load || true
+                if command -v deb-systemd-invoke >/dev/null 2>&1; then
+                    deb-systemd-invoke restart auditd || true
+                fi
+            else
+                echo "[!] auditd service not active, skipping kernel rule load." >&2
+            fi
+        else
+            echo "[!] ERROR: Audit rule syntax validation failed! Rules not loaded." >&2
+            return 1
+        fi
+    else
+        echo "[!] augenrules not installed, skipping audit rule reload." >&2
+    fi
+}
 
 # --- Main Logic Execution ---
 
 case "$1" in
     configure)
+        reload_audit_rules
     ;;
 
     abort-upgrade|abort-remove|abort-deconfigure)

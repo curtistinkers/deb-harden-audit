@@ -18,4 +18,4 @@ Suggests:
  deb-harden-fim,
  deb-harden-ssh,
  lynis
-Description:
+Description: Enables auditd

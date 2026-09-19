@@ -1,0 +1,2 @@
+etc/audit/rules.d/10_deb-harden-audit_base.rules        etc/audit/rules.d/
+etc/audit/rules.d/30_deb-harden-audit_compliance.rules  etc/audit/rules.d/

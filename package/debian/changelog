@@ -1,0 +1,6 @@
+deb-harden-audit (1.0.0-1) stable; urgency=low
+
+  * Initial release of deb-harden-audit package.
+    (Closes: #100000)
+
+ -- curtistinkers <curtistinkers@gmail.com>  Fri, 18 Sep 2026 22:05:00 -0500

@@ -1,0 +1,23 @@
+Source: deb-harden-audit
+Section: admin
+Priority: optional
+Maintainer: curtistinkers <curtistinkers@gmail.com>
+Build-Depends: debhelper-compat (= 13)
+Standards-Version: 4.6.2
+Vcs-Browser: https://github.com/curtistinkers/deb-harden-audit
+Vcs-Git: https://github.com/curtistinkers/deb-harden-audit.git
+
+Package: deb-harden-audit
+Architecture: all
+Depends:
+ auditd,
+ ${misc:Depends}
+Enhances:
+ auditd,
+ deb-harden-fim,
+ deb-harden-ssh
+Suggests:
+ deb-harden-fim,
+ deb-harden-ssh,
+ lynis
+Description:

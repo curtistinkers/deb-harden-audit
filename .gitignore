@@ -8,5 +8,5 @@ dist/
 **/.debhelper
 **/debhelper-build-stamp
 **/*.substvars
-**/deb-harden-ssh/*
+**/deb-harden-audit/*
 **/debian/files

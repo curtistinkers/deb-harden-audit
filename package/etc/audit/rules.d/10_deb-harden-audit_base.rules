@@ -1,0 +1,20 @@
+# =====================================================================
+# 10-base.rules: Core Kernel Audit Subsystem Configuration
+# =====================================================================
+
+# --- Audit Buffer Size ---
+-b 8192
+
+# --- Failure Mode ---
+-f 1
+
+# --- Rate Limiting & Backlog ---
+-r 0
+--backlog_limit 8192
+
+# --- Self-Auditing / Administrative Tracking ---
+-w /etc/audit/ -p wa -k audit_config_changes
+-w /etc/libaudit.conf -p wa -k audit_config_changes
+-w /sbin/auditctl -p x -k audit_tools_execution
+-w /sbin/auditd -p x -k audit_tools_execution
+-w /sbin/augenrules -p x -k audit_tools_execution

@@ -1,9 +1,8 @@
 deb-harden-audit (1.0.1) stable; urgency=low
 
   * Removed -1 version number.
-    (Closes: #100000)
 
- -- curtistinkers <curtistinkers@gmail.com>  Fri, 18 Sep 2026 22:05:00 -0500
+ -- curtistinkers <curtistinkers@gmail.com>  Sat, 19 Sep 2026 17:25:00 -0500
 
 deb-harden-audit (1.0.0-1) stable; urgency=low
 
